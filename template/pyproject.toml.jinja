@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ package }}"
+authors = [
+    {name = "{{ user_name }}", email = "{{ email }}"},
+]
+description = "{{ description }}."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = []
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = [
+	{% if "add_pytest" in features %}"pytest", {% endif %}
+	{%- if "add_ruff" in features %}"ruff", {% endif %}
+	{%- if "add_mypy" in features %}"mypy", {% endif %}
+	{%- if "add_nbval" in features %}"nbval", {% endif %}
+	{%- if "add_coverage" in features %}"pytest-cov", {% endif %}
+]
+
+[tool.setuptools_scm]
+write_to = "src/{{ package }}/_version.py"
+
+{%- if "add_ruff" in features %}
+
+[tool.ruff]
+exclude = ["_version.py", "examples/*"]
+line-length = 100
+lint.select = ["E", "F", "W", "I", "N", "D", "PL", "ARG"]
+lint.ignore = ["PLR2004", "D107", "D105", "D102"]
+
+[tool.ruff.lint.pydocstyle]
+convention="numpy"
+{% endif %}
+{%- if "add_coverage" in features %}
+
+[tool.coverage.run]
+omit = ["src/{{ package }}/_version.py"]
+{% endif %}
