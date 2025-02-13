@@ -23,7 +23,7 @@ jobs:
       - name: Lint with Ruff
         run: ruff check src/{{ package }}
       - name: Check types with MyPy
-        run: mypy {{ package }}
+        run: mypy src/{{ package }}
 {% endif -%}
 
 {%- if "add_pytest" in features %}
