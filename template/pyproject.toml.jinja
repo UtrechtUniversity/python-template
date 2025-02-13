@@ -34,6 +34,12 @@ test = [
 	{%- if "add_nbval" in features %}"nbval", {% endif %}
 	{%- if "add_coverage" in features %}"pytest-cov", {% endif %}
 ]
+{%- if "add_sphinx" in features %}
+docs = [
+    "sphinx<9.0.0", "sphinx-rtd-theme", "sphinxcontrib-napoleon",
+    "sphinx-autodoc-typehints", "sphinx_inline_tabs", "sphinx_copybutton",
+]
+{%- endif %}
 
 [tool.setuptools_scm]
 write_to = "src/{{ package }}/_version.py"
