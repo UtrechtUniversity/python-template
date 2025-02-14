@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# _commit: a2adcee
+_src_path: .
+copyright_holder: Utrecht University
+email: some.email@uu.nl
+features:
+- add_ruff
+- add_mypy
+- add_nbval
+- add_pytest
+- add_coverage
+- add_sphinx
+package: packagename
+user_name: Someone you Know
