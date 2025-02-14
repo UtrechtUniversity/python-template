@@ -28,7 +28,7 @@ jobs:
         run: pip install ".[test,doc]"
       - name: Linting with ruff
         working-directory: ../new_repo
-        run: ruff src/somepackage
+        run: ruff check src/somepackage
       - name: Type checking with mypy
         working-directory: ../new_repo
         run: mypy src/somepackage
