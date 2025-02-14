@@ -25,7 +25,7 @@ jobs:
         run: git init
       - name: Install dependencies
         working-directory: ../new_repo
-        run: pip install -e ".[test,doc]"
+        run: pip install -e ".[test,docs]"
       - name: Linting with ruff
         working-directory: ../new_repo
         run: ruff check src/packagename
