@@ -19,24 +19,30 @@ jobs:
       - name: Install Copier
         run: pip install copier
       - name: Create new package
-        run: copier copy --data-file .github/workflows/.copier-answers.yml . new_repo
-      - name: Change directory into new repository
-        run: cd new_repo
+        run: copier copy --data-file .github/workflows/.copier-answers.yml . ../new_repo
       - name: Initialize git
+        working-directory: ../new_repo
         run: git init
       - name: Install dependencies
+        working-directory: ../new_repo
         run: pip install ".[test,doc]"
       - name: Linting with ruff
+        working-directory: ../new_repo
         run: ruff src/somepackage
       - name: Type checking with mypy
+        working-directory: ../new_repo
         run: mypy src/somepackage
       - name: Unit tests with pytest
+        working-directory: ../new_repo
         run: pytest tests
       - name: pytest coverage
+        working-directory: ../new_repo
         run: pytest --cov=src/somepackage tests --cov-report=term-missing --cov-fail-under=95
       - name: Notebook validation
+        working-directory: ../new_repo
         run: pytest --nbval-lax examples
       - name: Test documentation
+        working-directory: ../new_repo
         run: sphinx-build -M html docs/source docs/build
 
       
