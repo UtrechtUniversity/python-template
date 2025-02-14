@@ -28,16 +28,16 @@ jobs:
         run: pip install ".[test,doc]"
       - name: Linting with ruff
         working-directory: ../new_repo
-        run: ruff check src/somepackage
+        run: ruff check src/packagename
       - name: Type checking with mypy
         working-directory: ../new_repo
-        run: mypy src/somepackage
+        run: mypy src/packagename
       - name: Unit tests with pytest
         working-directory: ../new_repo
         run: pytest tests
       - name: pytest coverage
         working-directory: ../new_repo
-        run: pytest --cov=src/somepackage tests --cov-report=term-missing --cov-fail-under=95
+        run: pytest --cov=src/packagename tests --cov-report=term-missing --cov-fail-under=95
       - name: Notebook validation
         working-directory: ../new_repo
         run: pytest --nbval-lax examples
