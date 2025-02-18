@@ -19,7 +19,7 @@ jobs:
       - name: Install Copier
         run: pip install copier
       - name: Create new package
-        run: copier copy --data-file .github/workflows/.copier-answers.yml . ../new_repo
+        run: copier copy --data-file .github/workflows/data/.copier-answers.yml . ../new_repo
       - name: Initialize git
         working-directory: ../new_repo
         run: git init
