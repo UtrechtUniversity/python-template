@@ -50,11 +50,26 @@ git init
 
 ### 4. Try installing the package
 
-You can install your package now (for example in an [environment](https://docs.astral.sh/uv/pip/environments/#creating-a-virtual-environment)).
+
+> [!TIP]
+> We recommend working with [virual environments](https://docs.astral.sh/uv/pip/environments/#creating-a-virtual-environment). If you are working with `uv` for Python project management, initialize a `venv` in your repository with the following commands:
+> ```
+> uv python pin 3.11
+> uv sync
+> ```
+> Where `3.11` can be changed to the Python version of your choice.
+
+You can install your package now:
 
 ```sh
-pip install .
+pip install . 
 ```
+or
+
+```sh
+uv pip install .
+```
+
 
 and test whether the installation works correctly:
 
@@ -82,3 +97,8 @@ git push
 ### 6. Start modifying the template
 
 You are now ready to add your own Python files to your repository!
+
+
+
+
+
