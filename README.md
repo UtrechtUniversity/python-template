@@ -62,8 +62,9 @@ git init
 You can install your package now:
 
 ```sh
-pip install . 
+pip install .
 ```
+
 and test whether the installation works correctly:
 
 ```sh
@@ -90,8 +91,3 @@ git push
 ### 6. Start modifying the template
 
 You are now ready to add your own Python files to your repository!
-
-
-
-
-
