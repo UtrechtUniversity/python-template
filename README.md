@@ -64,13 +64,6 @@ You can install your package now:
 ```sh
 pip install . 
 ```
-or
-
-```sh
-uv build
-```
-
-
 and test whether the installation works correctly:
 
 ```sh
