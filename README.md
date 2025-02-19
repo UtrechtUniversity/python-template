@@ -67,7 +67,7 @@ pip install .
 or
 
 ```sh
-uv pip install .
+uv build
 ```
 
 
