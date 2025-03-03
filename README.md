@@ -33,7 +33,7 @@ While using `pip` is the easiest, [`pipx`](https://github.com/pypa/pipx) or [`uv
 To create your new package use:
 
 ```sh
-copier copy UtrechtUniversity/python-template directory_of_your_package
+copier copy gh:UtrechtUniversity/python-template directory_of_your_package
 ```
 
 Answer the questions, and you will have a new directory that will get you started with your package. Feel free to disable some of
