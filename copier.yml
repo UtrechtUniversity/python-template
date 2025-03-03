@@ -36,3 +36,17 @@ features:
       value: add_coverage
     Documentation with sphinx:
       value: add_sphinx
+
+_message_after_copy: |
+  You package "{{ package }}" has been created successfully!
+
+  Next steps:
+
+  $ cd {{ _copier_conf.dst_path }}
+  $ git init
+
+  Then you are ready to test whether your newly created package works:
+
+  $ python -c "import {{ package }}"
+
+  Now, start creating new modules and code your own package!
