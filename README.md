@@ -41,7 +41,7 @@ the features you don't understand for now. You can always add these features int
 
 ### 3. Initialize a git repository
 
-You will need to [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for the package to be installable.
+You will need to initialize a git repository in the newly created folder for the package to be installable ([instructions for installing git]([git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)). 
 
 ```sh
 cd directory_of_your_package
@@ -50,7 +50,7 @@ git init
 
 ### 4. Try installing the package
 
-You can install your package now (for example in an [environment](https://docs.astral.sh/uv/pip/environments/#creating-a-virtual-environment)).
+You can install your package now:
 
 ```sh
 pip install .
@@ -59,13 +59,13 @@ pip install .
 and test whether the installation works correctly:
 
 ```sh
-python -c "import your_package_name"
+python -c "import your_package_name; your_package_name.hello_world('Universe')"
 ```
+This should return `Hello Universe!!`.
 
 ### 5. Upload your package to GitHub
 
-The first step is to create an empty repository on [GitHub](github.com) using the web interface. In your new
-repository there should be a green code button; copy the link to your repository. Then on your local machine type:
+The first step is to create an empty repository on [GitHub](github.com) using the web interface. Your empty repository typically contains instructions on how to connect your local repository to it. Otherwise, you there should be a green code button; copy the link to your repository. Then on your local machine type:
 
 ```
 git remote add origin link_to_your_github_repository
