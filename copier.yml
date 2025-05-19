@@ -62,7 +62,7 @@ _message_after_copy: |
   {% endif %}
 
 _message_after_update: |
-  You package "{{ package }}" has been updated successfully!
+  Your package "{{ package }}" has been updated successfully!
 
   {% if 'add_pypi' in features -%}
   To upload your package to PyPI, you will need to create a secret in your repository on
