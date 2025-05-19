@@ -58,7 +58,7 @@ _message_after_copy: |
   To upload your package to PyPI, you will need to create a secret in your repository on
   the GitHub webpage. After logging in, in your repository, click on settings -> Secrets and Variables
   -> Actions -> New repository secret. Choose the name PYPI_API_TOKEN. You can get this token
-  from logging into your PiPY account, it should start with pypi-.
+  from logging into your PyPI account, it should start with pypi-.
   {% endif %}
 
 _message_after_update: |
