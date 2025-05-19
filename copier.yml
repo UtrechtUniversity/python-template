@@ -36,6 +36,8 @@ features:
       value: add_coverage
     Documentation with sphinx:
       value: add_sphinx
+    Publish on PyPI:
+      value: add_pypi
 
 _message_after_copy: |
   You package "{{ package }}" has been created successfully!
@@ -50,3 +52,21 @@ _message_after_copy: |
   $ python -c "import {{ package }}"
 
   Now, start creating new modules and code your own package!
+
+  {%- if 'add_pypi' in features %}
+
+  To upload your package to PyPI, you will need to create a secret in your repository on
+  the GitHub webpage. After logging in, in your repository, click on settings -> Secrets and Variables
+  -> Actions -> New repository secret. Choose the name PYPI_API_TOKEN. You can get this token
+  from logging into your PyPI account, it should start with pypi-.
+  {% endif %}
+
+_message_after_update: |
+  Your package "{{ package }}" has been updated successfully!
+
+  {% if 'add_pypi' in features -%}
+  To upload your package to PyPI, you will need to create a secret in your repository on
+  the GitHub webpage. After logging in, in your repository, click on settings -> Secrets and Variables
+  -> Actions -> New repository secret. Choose the name PYPI_API_TOKEN. You can get this token
+  from logging into your PyPI account, it should start with pypi-.
+  {% endif %}
